@@ -91,20 +91,30 @@ get_triangle_coordinates <- function(phylo, nodes, mode = c("max", "min", "mixed
 tree <- read.tree("fileS1_msa_fixed_rooted.tree")
 nodes_tree <- ggtree(tree) + geom_tiplab(size = 1) + geom_text2(aes(subset = !isTip, label = node), size = 1, hjust = -0.3)
 
-nodes_to_collapse <- c(923, 938)
-collapsed_tree_df <- tree %>% 
+#select nodes to collapse and remove nodes from tree data
+nodes_to_collapse <- c(923, 938, 943, 968, 981, 983, 990, 1001, 1019, 1115, 1134, 615, 788, 836, 846)
+collapsed_tree_df <- group_test %>% 
   remove_collapsed_nodes(nodes = nodes_to_collapse)
 
-triangles_df <- tree %>%
-  get_triangle_coordinates(nodes_to_collapse, mode = "mixed")
+#group HGT species to color branches
+group_test<-groupOTU(tree, .node=c("Erwinia-tracheiphila", "Janthinobacterium-sp"))
 
-ggtree(collapsed_tree_df) +
+#get coords for triangles
+triangles_df <- group_test %>%
+  get_triangle_coordinates(nodes_to_collapse, mode = "min")
+
+#plot ggtree with collapsed nodes as triangles
+triangles_plot <- 
+  ggtree(collapsed_tree_df, aes(color=group)) +
   geom_polygon(
     data = triangles_df,
-    mapping = aes(group = node_collapsed, fill = node_collapsed),
-    color = "#333333"
+    mapping = aes(group = node_collapsed),
+    color = "#333333",
+    fill = "steelblue"
   ) +
-  scale_fill_brewer(palette = "Set1") +
   theme(
     strip.background = element_blank()
   )
+
+
+
