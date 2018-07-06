@@ -91,13 +91,13 @@ get_triangle_coordinates <- function(phylo, nodes, mode = c("max", "min", "mixed
 tree <- read.tree("fileS1_msa_fixed_rooted.tree")
 nodes_tree <- ggtree(tree) + geom_tiplab(size = 1) + geom_text2(aes(subset = !isTip, label = node), size = 1, hjust = -0.3)
 
+#group HGT species to color branches
+group_test<-groupOTU(tree, .node=c("Ralstonia-syzygii", "Ralstonia-solanacearum", "Erwinia-tracheiphila", "Pantoea-stewartii", "Lonsdalea-quercina", "Pectobacterium-atrosepticum", "Pectobacterium-wasabiae", "Pectobacterium-parmentieri", "Pectobacterium-betavasculorum", "Pectobacterium-carotovorum", "Dickeya-zeae", "Dickeya-dadantii", "Dickeya-dianthicola", "Dickeya-chrysanthemi", "Dickeya-solani", "Cedecea-neteri", "Sphaerotilus-natas", "Janthinobacterium-sp", "Methylibium-sp", "Acidovorax-radicis", "Leptothrix-cholodnii", "Polyangium-brachysporum", "Vitrella-brassicaformis", "Sorangium-cellulosum", "Neocallimastix-californiae", "Anaeromyces-robustus", "Piromyces-finnis", "Allomyces-macrogynus", "Hamadaea-tsunoensis", "Streptomyces-acidiscabies", "Uliginosibacterium-gangwonense", "Haloferula-sp", "Physarum-polycephalum", "Acanthamoeba-castellanii", "Trichoderma-harzianum", "Trichoderma-virens", "Trichoderma-pseudokoningii", "Trichoderma-reesei", "Trichoderma-asperellum", "Trichoderma-atroviride", "Talaromyces-stipitatus2", "Penicillium-decumbens", "Penicillium-oxalicum", "Penicillium-brasilianum2", "Talaromyces-cellulolyticus3", "Talaromyces-marneffei", "Talaromyces-verruculosus2", "Thalassiosira-oceanica"))
+
 #select nodes to collapse and remove nodes from tree data
-nodes_to_collapse <- c(923, 938, 943, 968, 981, 983, 990, 1001, 1019, 1115, 1134, 615, 788, 836, 846)
+nodes_to_collapse <- c(923, 938, 943, 951, 981, 983, 990, 1001, 1019, 1115, 1134, 615, 788, 836, 846)
 collapsed_tree_df <- group_test %>% 
   remove_collapsed_nodes(nodes = nodes_to_collapse)
-
-#group HGT species to color branches
-group_test<-groupOTU(tree, .node=c("Erwinia-tracheiphila", "Janthinobacterium-sp"))
 
 #get coords for triangles
 triangles_df <- group_test %>%
@@ -106,6 +106,10 @@ triangles_df <- group_test %>%
 #plot ggtree with collapsed nodes as triangles
 triangles_plot <- 
   ggtree(collapsed_tree_df, aes(color=group)) +
+  geom_cladelabel(node = 903, label = "Prokaryotes", color = "black", barsize = 2, align = T, fontsize = 5, offset = 1) +
+  geom_cladelabel(node = 610, label = "Eukaryotes", color = "black", barsize = 2, align = T, fontsize = 5, offset = 1) +
+  xlim(0, 8) +
+  scale_color_manual(values = c("darkgrey", "red")) +
   geom_polygon(
     data = triangles_df,
     mapping = aes(group = node_collapsed),
