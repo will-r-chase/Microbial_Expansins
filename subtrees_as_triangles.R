@@ -1,9 +1,9 @@
 library(purrr)
 library(ape)
-library(ggtree)
 library(ggplot2)
+library(ggtree)
+library(plyr)
 library(dplyr)
-library(tidytree)
 library(magrittr)
 library(emojifont)
 library(grDevices)
@@ -96,7 +96,7 @@ nodes_tree <- ggtree(tree) + geom_tiplab(size = 1) + geom_text2(aes(subset = !is
 group_test<-groupOTU(tree, .node=c("Ralstonia-syzygii", "Ralstonia-solanacearum", "Erwinia-tracheiphila", "Pantoea-stewartii", "Lonsdalea-quercina", "Pectobacterium-atrosepticum", "Pectobacterium-wasabiae", "Pectobacterium-parmentieri", "Pectobacterium-betavasculorum", "Pectobacterium-carotovorum", "Dickeya-zeae", "Dickeya-dadantii", "Dickeya-dianthicola", "Dickeya-chrysanthemi", "Dickeya-solani", "Cedecea-neteri", "Sphaerotilus-natas", "Janthinobacterium-sp", "Methylibium-sp", "Acidovorax-radicis", "Leptothrix-cholodnii", "Polyangium-brachysporum", "Vitrella-brassicaformis", "Sorangium-cellulosum", "Neocallimastix-californiae", "Anaeromyces-robustus", "Piromyces-finnis", "Allomyces-macrogynus", "Hamadaea-tsunoensis", "Streptomyces-acidiscabies", "Uliginosibacterium-gangwonense", "Haloferula-sp", "Physarum-polycephalum", "Acanthamoeba-castellanii", "Trichoderma-harzianum", "Trichoderma-virens", "Trichoderma-pseudokoningii", "Trichoderma-reesei", "Trichoderma-asperellum", "Trichoderma-atroviride", "Talaromyces-stipitatus2", "Penicillium-decumbens", "Penicillium-oxalicum", "Penicillium-brasilianum2", "Talaromyces-cellulolyticus3", "Talaromyces-marneffei", "Talaromyces-verruculosus2", "Thalassiosira-oceanica"))
 
 #select nodes to collapse and remove nodes from tree data
-nodes_to_collapse <- c(923, 938, 943, 951, 981, 983, 990, 1001, 1019, 1115, 1134, 615, 788, 836, 846)
+nodes_to_collapse <- c(923, 938, 943, 951, 981, 983, 990, 1001, 1019, 1115, 1134, 615, 788, 836, 846, 774)
 collapsed_tree_df <- group_test %>% 
   remove_collapsed_nodes(nodes = nodes_to_collapse)
 
@@ -130,14 +130,16 @@ collapse_tree<-
   scale_color_manual(values = c("darkgrey", "red"))
 
 for(i in 1:length(nodes_to_collapse)){
-  collapse_tree <- collapse(collapse_tree, node = nodes_to_collapse[i]) + 
-    geom_point2(aes(subset = (node == nodes_to_collapse[i])), size = 3, shape = 23, fill = "blue")
+  collapse_tree <- ggtree::collapse(collapse_tree, node = nodes_to_collapse[i])
 }
 
+collapse_tree + geom_point2(aes(subset = (node %in% nodes_to_collapse)), size = 3, shape = 23, fill = "blue")
 
 ##### NOTE TO SELF, latest solution, use clade_label with collapse to label collapsed clades then edit in inkscape
 ##### https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!msg/bioc-ggtree/0H1PCJPlI1Q/aJy9qY50DQAJ
 collapse_tree
+
+labels <- LETTERS[1:15]
 
 for(i in 1:length(nodes_to_collapse)){
   collapse_tree <- collapse_tree + 
@@ -154,12 +156,21 @@ dev.off()
 #scale_plot to triangles
 test_tree<-
   ggtree(group_test, aes(color=group)) %>% 
-  scaleClade(923, scale=0.1) + 
+  scaleClade(1022, scale=0.2) + 
   geom_cladelabel(node = 903, label = "Prokaryotes", color = "black", barsize = 2, align = T, fontsize = 5, offset = 1) +
   geom_cladelabel(node = 610, label = "Eukaryotes", color = "black", barsize = 2, align = T, fontsize = 5, offset = 1) +
   xlim(0, 8) +
   scale_color_manual(values = c("darkgrey", "red"))
 test_tree
+data<-test_tree$data
+scaled_tree<-
+  ggtree(data, aes(color=group)) +
+  geom_cladelabel(node = 903, label = "Prokaryotes", color = "black", barsize = 2, align = T, fontsize = 5, offset = 1) +
+  geom_cladelabel(node = 610, label = "Eukaryotes", color = "black", barsize = 2, align = T, fontsize = 5, offset = 1) +
+  xlim(0, 8) +
+  scale_color_manual(values = c("darkgrey", "red"))
+scaled_tree
+
 scaled_tree<-as.phylo(test_tree)
 group_scaled<-groupOTU(scaled_tree, .node=c("Ralstonia-syzygii", "Ralstonia-solanacearum", "Erwinia-tracheiphila", "Pantoea-stewartii", "Lonsdalea-quercina", "Pectobacterium-atrosepticum", "Pectobacterium-wasabiae", "Pectobacterium-parmentieri", "Pectobacterium-betavasculorum", "Pectobacterium-carotovorum", "Dickeya-zeae", "Dickeya-dadantii", "Dickeya-dianthicola", "Dickeya-chrysanthemi", "Dickeya-solani", "Cedecea-neteri", "Sphaerotilus-natas", "Janthinobacterium-sp", "Methylibium-sp", "Acidovorax-radicis", "Leptothrix-cholodnii", "Polyangium-brachysporum", "Vitrella-brassicaformis", "Sorangium-cellulosum", "Neocallimastix-californiae", "Anaeromyces-robustus", "Piromyces-finnis", "Allomyces-macrogynus", "Hamadaea-tsunoensis", "Streptomyces-acidiscabies", "Uliginosibacterium-gangwonense", "Haloferula-sp", "Physarum-polycephalum", "Acanthamoeba-castellanii", "Trichoderma-harzianum", "Trichoderma-virens", "Trichoderma-pseudokoningii", "Trichoderma-reesei", "Trichoderma-asperellum", "Trichoderma-atroviride", "Talaromyces-stipitatus2", "Penicillium-decumbens", "Penicillium-oxalicum", "Penicillium-brasilianum2", "Talaromyces-cellulolyticus3", "Talaromyces-marneffei", "Talaromyces-verruculosus2", "Thalassiosira-oceanica"))
 
