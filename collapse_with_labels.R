@@ -82,3 +82,6 @@ p2<-collapse_tree +
   geom_nodelab(aes(subset = (node %in% nodes_to_collapse)), color = "black", hjust = -0.05, size = 6) +
   scale_fill_manual(values = colors2)
 p2
+
+
+ggtree(taxonomy_tree, aes(color=taxonomy)) + geom_tiplab(size=1, hjust = -0.3) + scale_color_manual(values = colors1) + geom_text2(aes(label = node), size = 1, hjust = -0.3, color = "black") + theme(legend.position = "right")

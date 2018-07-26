@@ -71,29 +71,55 @@ ecology_plots <- lapply(ecology_split, function(x){
   }
 )  
 
+ecology_plots <- lapply(ecology_split, function(x){
+  ggplot(x, aes(x = ecology, y = n)) + 
+    geom_bar(stat = "identity") + 
+    theme_inset()
+}
+)  
+
+#get nodes to place bar chart insets
+names(ecology_plots) <- c("1025", "788", "837", "616", "1125", "774", "969", "916", "1001", "1117", "849", "921")
+
+names(ecology_plots) <- c(1025, 788, 837, 616, 1125, 774, 969, 916, 1001, 1117, 849, 921)
+
+
 #group tips by taxonomy
 eco_tree <- split(p$data$label, p$data$ecology)
 eco_tree <- groupOTU(tree, eco_tree, group_name = "ecology")
 
 #plot tree
-ecology_tree<-
+ecology_tree <-
   ggtree(eco_tree, aes(color=ecology)) + 
   geom_point2(aes(subset = as.numeric(sub("/.*", "", label))>=70 & as.numeric(sub(".*/", "", label))>=95 & !isTip), color = "black") +
   xlim(0, 8) +
   scale_color_manual(values = colors) +
   theme(legend.position = "right") +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
-  geom_strip(1, 1, label = "", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) 
+  geom_strip(296, 315, label = "Xanthomonads", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(317, 347, label = "Firmicutes", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(349, 360, label = "Enterobacteria", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(363, 374, label = "Firmicutes", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(380, 394, label = "Myxobacteria", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(426, 500, label = "Actinobacteria", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(527, 602, label = "Actinobacteria", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(2, 161, label = "Ascomycetes", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(163, 174, label = "Basidiomycetes", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(178, 207, label = "Amoebozoa", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(225, 231, label = "Archaeplastida", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(259, 291, label = "Stramenopiles", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1)
 
+test<-ggtree(tree)
+
+inset_tree <- inset(test, ecology_plots, width = 100, height = 100, x = "branch")
+
+
+tr <- rtree(15)
+v <- ggtree(tr)
+d <- lapply(1:15, rnorm, n=100)
+ylim <- range(unlist(d))
+bx <- lapply(d, function(y) {
+  dd <- data.frame(y=y)
+  ggplot(dd, aes(x=1, y=y))+geom_boxplot() + ylim(ylim) + theme_inset()
+})
+names(bx) <- 1:15
+inset(test, bx, width=1, height=1)
