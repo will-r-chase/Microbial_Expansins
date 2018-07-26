@@ -1,0 +1,77 @@
+Clavibacter michiganensis subsp. Michiganensis
+Clavibacter michiganensis subsp. Insidiosus
+Clavibacter sepedonicus
+Clavibacter insidiosus
+Cellulomonas sp. FA1
+Streptomyces acidiscabies2
+Streptomyces mirabilis
+Hamadaea tsunoensis
+Glycomyces artemisiae
+Stanieria sp. NIES-3757
+Myxosarcina sp. GI1
+Pleurocapsa sp. CCALA 161
+Mastigocoleus testarum
+Herpetosiphon aurantiacus DSM 785
+Xylella taiwanensis
+Xylella fastidiosa
+Xanthomonas phaseoli
+Xanthomonas citri
+Xanthomonas fuscans
+Xanthomonas axonopodis pv. vasculorum
+Xanthomonas vasicola pv. vasculorum
+Xanthomonas oryzae pv. oryzicola
+Xanthomonas cannabis
+Xanthomonas melonis
+Xanthomonas nasturtii
+Xanthomonas arboricola
+Xanthomonas pisi
+Xanthomonas populi
+Xanthomonas hortorum pv. carotae str. M081
+Xanthomonas gardneri ATCC 19865
+Xanthomonas dyei
+Xanthomonas cucurbitae
+Xanthomonas codiaei
+Xanthomonas floridensis
+Xanthomonas campestris pv. raphani
+Xanthomonas maliensis
+Vibrio mangrovi
+Erwinia tracheiphila
+Pantoea stewartii
+Pectobacterium carotovorum
+Pseudomonas indica
+Gynuella sunshinyii
+Rhizobacter sp.
+Methylibium sp. CF468
+Mitsuaria sp. PDC51
+Leptothrix cholodnii
+Acidovorax citrulli
+Acidovorax avenae
+Acidovorax cattleyae
+Acidovorax konjaci
+Acidovorax radicis
+Massilia sp. B2
+Janthinobacterium sp. CG23_2
+Sorangium cellulosum
+Myxococcus fulvus
+Bacillus subtilis
+Streptomyces acidiscabies
+Acidovorax oryzae
+Penicillium brasilianum
+Penicillium oxalicum
+Penicillium decumbens
+Talaromyces cellulolyticus
+Talaromyces stipitatus ATCC 10500
+Talaromyces islandicus
+Talaromyces marneffei PM1
+Aspergillus fischeri
+Aspergillus fumigatus
+Trichoderma asperellum
+Trichoderma atroviride IMI 206040
+Trichoderma harzianum
+Trichoderma virens Gv29-8
+Trichoderma reesei QM6a
+Trichoderma pseudokoningii
+Dictyostelium purpureum
+Phytophthora sojae
+Aspergillus nomius NRRL 13137
+Penicillium digitatum Pd1

@@ -1,0 +1,227 @@
+id	name	domain	start	end
+AAO29688.1	Xylella fastidiosa	Full Protein	1	569
+AAO29688.1	Xylella fastidiosa	GH5	3	370
+AAO29688.1	Xylella fastidiosa	Expansin	360	569
+ABV57767.1	Trichoderma pseudokoningii	Full Protein	1	494
+ABV57767.1	Trichoderma pseudokoningii	CBM1	25	51
+ABV57767.1	Trichoderma pseudokoningii	Expansin	252	464
+ABX04461.1	Herpetosiphon aurantiacus DSM 785	Full Protein	1	477
+ABX04461.1	Herpetosiphon aurantiacus DSM 785	Expansin	45	236
+ABX04461.1	Herpetosiphon aurantiacus DSM 785	CBM32	270	385
+ACB05430.1	Trichoderma asperellum	Full Protein	1	495
+ACB05430.1	Trichoderma asperellum	CBM1	25	51
+ACB05430.1	Trichoderma asperellum	Expansin	253	493
+ACH57439.1	Penicillium decumbens	Full Protein	1	499
+ACH57439.1	Penicillium decumbens	CBM1	27	53
+ACH57439.1	Penicillium decumbens	Expansin	255	478
+ADZ74267.1	Penicillium oxalicum	Full Protein	1	499
+ADZ74267.1	Penicillium oxalicum	CBM1	27	53
+ADZ74267.1	Penicillium oxalicum	Expansin	255	478
+AEL08736.1	Xanthomonas campestris pv. raphani	Full Protein	1	590
+AEL08736.1	Xanthomonas campestris pv. raphani	GH5	38	340
+AEL08736.1	Xanthomonas campestris pv. raphani	Expansin	375	590
+AEQ94851.1	Xanthomonas oryzae pv. oryzicola	Full Protein	1	590
+AEQ94851.1	Xanthomonas oryzae pv. oryzicola	GH5	1	357
+AEQ94851.1	Xanthomonas oryzae pv. oryzicola	Expansin	362	590
+AHN16207.1	Clavibacter michiganensis subsp. Michiganensis	Full Protein	1	746
+AHN16207.1	Clavibacter michiganensis subsp. Michiganensis	GH5	86	395
+AHN16207.1	Clavibacter michiganensis subsp. Michiganensis	CBM2	439	527
+AHN16207.1	Clavibacter michiganensis subsp. Michiganensis	Expansin	572	728
+AJW80648.1	Clavibacter michiganensis subsp. Insidiosus	Full Protein	1	746
+AJW80648.1	Clavibacter michiganensis subsp. Insidiosus	GH5	74	395
+AJW80648.1	Clavibacter michiganensis subsp. Insidiosus	CBM2	446	524
+AJW80648.1	Clavibacter michiganensis subsp. Insidiosus	Expansin	572	728
+BAI83433.1	Aspergillus fumigatus	Full Protein	1	476
+BAI83433.1	Aspergillus fumigatus	CBM1	24	49
+BAI83433.1	Aspergillus fumigatus	Expansin	251	459
+BAP90857.1	Talaromyces cellulolyticus	Full Protein	1	491
+BAP90857.1	Talaromyces cellulolyticus	CBM1	37	62
+BAP90857.1	Talaromyces cellulolyticus	Expansin	305	491
+BAU63960.1	Stanieria sp. NIES-3757	Full Protein	1	487
+BAU63960.1	Stanieria sp. NIES-3757	CBM2	13	103
+BAU63960.1	Stanieria sp. NIES-3757	CBM2	145	242
+BAU63960.1	Stanieria sp. NIES-3757	Expansin	261	461
+CEO59085.1	Penicillium brasilianum	Full Protein	1	485
+CEO59085.1	Penicillium brasilianum	CBM1	27	53
+CEO59085.1	Penicillium brasilianum	Expansin	241	457
+EED18662.1	Talaromyces stipitatus ATCC 10500	Full Protein	1	465
+EED18662.1	Talaromyces stipitatus ATCC 10500	CBM1	32	55
+EED18662.1	Talaromyces stipitatus ATCC 10500	Expansin	218	448
+EGD21042.1	Xanthomonas gardneri ATCC 19865	GH5	1	189
+EGD21042.1	Xanthomonas gardneri ATCC 19865	Full Protein	1	521
+EGD21042.1	Xanthomonas gardneri ATCC 19865	Expansin	317	521
+EGR44818.1	Trichoderma reesei QM6a	Full Protein	1	493
+EGR44818.1	Trichoderma reesei QM6a	CBM1	25	51
+EGR44818.1	Trichoderma reesei QM6a	Expansin	251	463
+ETC86511.1	Xanthomonas hortorum pv. carotae str. M081	Full Protein	1	650
+ETC86511.1	Xanthomonas hortorum pv. carotae str. M081	GH5	98	400
+ETC86511.1	Xanthomonas hortorum pv. carotae str. M081	Expansin	440	650
+KFA35869.1	Xanthomonas vasicola pv. vasculorum	Full Protein	1	589
+KFA35869.1	Xanthomonas vasicola pv. vasculorum	GH5	25	340
+KFA35869.1	Xanthomonas vasicola pv. vasculorum	Expansin	385	589
+KFX52555.1	Talaromyces marneffei PM1	Full Protein	1	483
+KFX52555.1	Talaromyces marneffei PM1	CBM1	29	55
+KFX52555.1	Talaromyces marneffei PM1	Expansin	258	483
+KGE53345.1	Xanthomonas axonopodis pv. vasculorum	GH5	1	357
+KGE53345.1	Xanthomonas axonopodis pv. vasculorum	Full Protein	1	590
+KGE53345.1	Xanthomonas axonopodis pv. vasculorum	Expansin	362	590
+KKO99424.1	Trichoderma harzianum	Full Protein	1	499
+KKO99424.1	Trichoderma harzianum	CBM1	25	51
+KKO99424.1	Trichoderma harzianum	Expansin	257	498
+PPU91594.1	Xanthomonas populi	Full Protein	1	590
+PPU91594.1	Xanthomonas populi	GH5	38	258
+PPU91594.1	Xanthomonas populi	Expansin	385	590
+SFR80645.1	Mitsuaria sp. PDC51	Full Protein	1	339
+SFR80645.1	Mitsuaria sp. PDC51	Expansin	56	209
+SFR80645.1	Mitsuaria sp. PDC51	CBM2	261	338
+WP_012296898.1	Clavibacter sepedonicus	Full Protein	1	684
+WP_012296898.1	Clavibacter sepedonicus	GH5	22	331
+WP_012296898.1	Clavibacter sepedonicus	CBM2	378	463
+WP_012296898.1	Clavibacter sepedonicus	Expansin	490	662
+WP_013594276.1	Acidovorax avenae	Full Protein	1	337
+WP_013594276.1	Acidovorax avenae	Expansin	37	232
+WP_013594276.1	Acidovorax avenae	CBM2	257	336
+WP_017159125.1	Xanthomonas phaseoli	GH5	1	283
+WP_017159125.1	Xanthomonas phaseoli	Full Protein	1	590
+WP_017159125.1	Xanthomonas phaseoli	Expansin	362	590
+WP_020424757.1	Acidovorax oryzae	Expansin	15	232
+WP_020424757.1	Acidovorax oryzae	CBM2	257	336
+WP_020424757.1	Acidovorax oryzae	Full Protein	1	337
+WP_024937809.1	Xanthomonas arboricola	Full Protein	1	590
+WP_024937809.1	Xanthomonas arboricola	GH5	38	252
+WP_024937809.1	Xanthomonas arboricola	Expansin	385	590
+WP_031340658.1	Xanthomonas maliensis	Full Protein	1	590
+WP_031340658.1	Xanthomonas maliensis	GH5	25	234
+WP_031340658.1	Xanthomonas maliensis	Expansin	383	590
+WP_036487951.1	Myxosarcina sp. GI1	Full Protein	1	345
+WP_036487951.1	Myxosarcina sp. GI1	CBM2	4	98
+WP_036487951.1	Myxosarcina sp. GI1	Expansin	128	305
+WP_038269744.1	Xylella taiwanensis	Full Protein	1	591
+WP_038269744.1	Xylella taiwanensis	GH5	17	387
+WP_038269744.1	Xylella taiwanensis	Expansin	379	591
+WP_039410730.1	Xanthomonas cannabis	Full Protein	1	590
+WP_039410730.1	Xanthomonas cannabis	GH5	38	314
+WP_039410730.1	Xanthomonas cannabis	Expansin	380	590
+WP_041828084.1	Acidovorax citrulli	Full Protein	1	337
+WP_041828084.1	Acidovorax citrulli	Expansin	35	212
+WP_041828084.1	Acidovorax citrulli	CBM2	257	336
+WP_045530809.1	Clavibacter insidiosus	Full Protein	1	746
+WP_045530809.1	Clavibacter insidiosus	GH5	74	395
+WP_045530809.1	Clavibacter insidiosus	CBM2	446	524
+WP_045530809.1	Clavibacter insidiosus	Expansin	572	728
+WP_046531055.1	Cellulomonas sp. FA1	Full Protein	1	458
+WP_046531055.1	Cellulomonas sp. FA1	Expansin	178	318
+WP_046531055.1	Cellulomonas sp. FA1	CBM2	368	452
+WP_046964493.1	Xanthomonas pisi	Full Protein	1	590
+WP_046964493.1	Xanthomonas pisi	GH5	38	339
+WP_046964493.1	Xanthomonas pisi	Expansin	386	590
+WP_047509489.1	Methylibium sp. CF468	Full Protein	1	333
+WP_047509489.1	Methylibium sp. CF468	Expansin	55	214
+WP_047509489.1	Methylibium sp. CF468	CBM2	253	332
+WP_050370310.1	Streptomyces acidiscabies	Full Protein	1	499
+WP_050370310.1	Streptomyces acidiscabies	Expansin	162	301
+WP_050370310.1	Streptomyces acidiscabies	CBM2	402	499
+WP_051367313.1	Hamadaea tsunoensis	Full Protein	1	474
+WP_051367313.1	Hamadaea tsunoensis	Expansin	177	316
+WP_051367313.1	Hamadaea tsunoensis	CBM2	378	469
+WP_052829981.1	Gynuella sunshinyii	Full Protein	1	341
+WP_052829981.1	Gynuella sunshinyii	Expansin	15	206
+WP_052829981.1	Gynuella sunshinyii	CBM2	261	340
+WP_056808760.1	Rhizobacter sp.	Full Protein	1	334
+WP_056808760.1	Rhizobacter sp.	Expansin	56	215
+WP_056808760.1	Rhizobacter sp.	CBM2	254	333
+WP_057661402.1	Xanthomonas citri	GH5	1	283
+WP_057661402.1	Xanthomonas citri	Full Protein	1	590
+WP_057661402.1	Xanthomonas citri	Expansin	362	590
+WP_058184236.1	Mastigocoleus testarum	Full Protein	1	928
+WP_058184236.1	Mastigocoleus testarum	GH9	14	438
+WP_058184236.1	Mastigocoleus testarum	CBM2	522	603
+WP_058184236.1	Mastigocoleus testarum	Expansin	716	919
+WP_061608026.1	Sorangium cellulosum	Full Protein	1	411
+WP_061608026.1	Sorangium cellulosum	CBM2	24	113
+WP_061608026.1	Sorangium cellulosum	Expansin	228	407
+WP_064509384.1	Xanthomonas floridensis	Full Protein	1	590
+WP_064509384.1	Xanthomonas floridensis	GH5	37	286
+WP_064509384.1	Xanthomonas floridensis	Expansin	362	590
+WP_064632440.1	Xanthomonas nasturtii	Full Protein	1	593
+WP_064632440.1	Xanthomonas nasturtii	GH5	38	339
+WP_064632440.1	Xanthomonas nasturtii	Expansin	383	593
+WP_082692459.1	Janthinobacterium sp. CG23_2	Full Protein	1	351
+WP_082692459.1	Janthinobacterium sp. CG23_2	CBM2	32	107
+WP_082692459.1	Janthinobacterium sp. CG23_2	Expansin	154	337
+WP_084334122.1	Pseudomonas indica	Full Protein	1	398
+WP_084334122.1	Pseudomonas indica	Expansin	29	209
+WP_084334122.1	Pseudomonas indica	CBM2	318	397
+WP_087481129.1	Vibrio mangrovi	Full Protein	1	335
+WP_087481129.1	Vibrio mangrovi	Expansin	44	202
+WP_087481129.1	Vibrio mangrovi	CBM2	260	334
+WP_092838997.1	Acidovorax cattleyae	Full Protein	1	337
+WP_092838997.1	Acidovorax cattleyae	Expansin	22	232
+WP_092838997.1	Acidovorax cattleyae	CBM2	257	336
+WP_092954004.1	Acidovorax konjaci	Full Protein	1	312
+WP_092954004.1	Acidovorax konjaci	Expansin	12	211
+WP_092954004.1	Acidovorax konjaci	CBM2	258	310
+WP_096035367.1	Xanthomonas fuscans	GH5	1	283
+WP_096035367.1	Xanthomonas fuscans	Full Protein	1	590
+WP_096035367.1	Xanthomonas fuscans	Expansin	362	590
+WP_099881736.1	Massilia sp. B2	Full Protein	1	353
+WP_099881736.1	Massilia sp. B2	CBM2	32	107
+WP_099881736.1	Massilia sp. B2	Expansin	156	339
+WP_104539450.1	Xanthomonas codiaei	Full Protein	1	590
+WP_104539450.1	Xanthomonas codiaei	GH5	37	258
+WP_104539450.1	Xanthomonas codiaei	Expansin	380	590
+WP_104585882.1	Xanthomonas melonis	Full Protein	1	589
+WP_104585882.1	Xanthomonas melonis	GH5	38	316
+WP_104585882.1	Xanthomonas melonis	Expansin	385	589
+WP_104602509.1	Xanthomonas cucurbitae	Full Protein	1	588
+WP_104602509.1	Xanthomonas cucurbitae	GH5	38	316
+WP_104602509.1	Xanthomonas cucurbitae	Expansin	371	588
+WP_104616761.1	Xanthomonas dyei	Full Protein	1	590
+WP_104616761.1	Xanthomonas dyei	GH5	38	339
+WP_104616761.1	Xanthomonas dyei	Expansin	377	590
+WP_106240624.1	Pleurocapsa sp. CCALA 161	Full Protein	1	489
+WP_106240624.1	Pleurocapsa sp. CCALA 161	CBM2	10	92
+WP_106240624.1	Pleurocapsa sp. CCALA 161	CBM2	147	242
+WP_106240624.1	Pleurocapsa sp. CCALA 161	Expansin	270	487
+WP_106363067.1	Glycomyces artemisiae	Full Protein	1	446
+WP_106363067.1	Glycomyces artemisiae	CBM2	44	138
+WP_106363067.1	Glycomyces artemisiae	Expansin	299	437
+XP_001257521.1	Aspergillus fischeri	Full Protein	1	479
+XP_001257521.1	Aspergillus fischeri	CBM1	24	49
+XP_001257521.1	Aspergillus fischeri	Expansin	253	450
+XP_013944337.1	Trichoderma atroviride IMI 206040	Full Protein	1	493
+XP_013944337.1	Trichoderma atroviride IMI 206040	CBM1	25	51
+XP_013944337.1	Trichoderma atroviride IMI 206040	Expansin	341	492
+XP_013954982.1	Trichoderma virens Gv29-8	Full Protein	1	491
+XP_013954982.1	Trichoderma virens Gv29-8	CBM1	25	51
+XP_013954982.1	Trichoderma virens Gv29-8	Expansin	249	490
+ASK23966.1	Bacillus subtilis	Full Protein	1	206
+ASK23966.1	Bacillus subtilis	Expansin	1	206
+EGZ29134.1	Phytophthora sojae	Full Protein	1	204
+EGZ29134.1	Phytophthora sojae	Expansin	37	183
+EGC39116.1	Dictyostelium purpureum	Full Protein	1	209
+EGC39116.1	Dictyostelium purpureum	Expansin	2	187
+WP_012349372.1	Leptothrix cholodnii	Full Protein	1	197
+WP_012349372.1	Leptothrix cholodnii	Expansin	2	182
+WP_010459029.1	Acidovorax radicis	Full Protein	1	198
+WP_010459029.1	Acidovorax radicis	Expansin	4	198
+SET81495.1	Myxococcus fulvus	Full Protein	1	197
+SET81495.1	Myxococcus fulvus	Expansin	7	196
+ASN85731.1	Pectobacterium carotovorum	Full Protein	1	203
+ASN85731.1	Pectobacterium carotovorum	Expansin	2	203
+EOS92802.1	Erwinia tracheiphila	Full Protein 1	1	208
+EOS92802.1	Erwinia tracheiphila	Expansin	7	207
+EOS92802.1	Erwinia tracheiphila	Full Protein 2	224	539
+EOS92802.1	Erwinia tracheiphila	GH5	224	539
+WP_044243227.1	Pantoea stewartii	Full Protein 1	1	207
+WP_044243227.1	Pantoea stewartii	Expansin	7	206
+WP_044243227.1	Pantoea stewartii	Full Protein 2	223	538
+WP_044243227.1	Pantoea stewartii	GH5	223	538
+SFH05604.1	Streptomyces mirabilis	Full Protein	1	199
+SFH05604.1	Streptomyces mirabilis	Expansin	4	177
+XP_015403425.1	Aspergillus nomius NRRL 13137	Full Protein	1	201
+XP_015403425.1	Aspergillus nomius NRRL 13137	Expansin	4	182
+XP_014534220.1	Penicillium digitatum Pd1	Full Protein	1	201
+XP_014534220.1	Penicillium digitatum Pd1	Expansin	7	183
+CRG87221.1	Talaromyces islandicus	Full Protein	1	188
+CRG87221.1	Talaromyces islandicus	Expansin	24	187
