@@ -109,8 +109,10 @@ ecology_tree2 <-
   ggtree(eco_tree, aes(color=ecology)) + 
   geom_point2(aes(subset = as.numeric(sub("/.*", "", label))>=70 & as.numeric(sub(".*/", "", label))>=95 & !isTip), color = "black") +
   geom_tippoint(aes(shape = plant_associate), size = 0.8, color = "seagreen3") +
+  scale_shape_manual(values = c(32, 17)) +
   xlim(0, 8) +
   scale_color_manual(values = colors) +
+  theme_tree2() +
   geom_strip(296, 315, label = "Xanthomonads", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
   geom_strip(317, 347, label = "Firmicutes", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
   geom_strip(349, 360, label = "Enterobacteria", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
