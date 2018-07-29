@@ -13,7 +13,7 @@
    viewBox="0 0 1440 1440"
    version="1.2"
    id="svg18960"
-   sodipodi:docname="HGT_tree.svg"
+   sodipodi:docname="HGT_tree_new.svg"
    inkscape:version="0.92.1 r15371">
   <metadata
      id="metadata18964">
@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -41,8 +41,8 @@
      id="namedview18962"
      showgrid="false"
      inkscape:zoom="0.41145833"
-     inkscape:cx="778.38317"
-     inkscape:cy="897.35211"
+     inkscape:cx="1056.8198"
+     inkscape:cy="978.53679"
      inkscape:window-x="1272"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -838,39 +838,36 @@
     <rect
        x="0"
        y="0"
-       width="1440"
+       width="938.73419"
        height="1440"
-       style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1"
        id="rect16721" />
-    <rect
-       x="0"
-       y="0"
-       width="1440"
-       height="1440"
-       style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"
-       id="rect16723" />
     <path
-       style="fill:none;stroke-width:1.066978;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;"
-       d="M 0 0 L 1440 0 L 1440 1440 L 0 1440 Z M 0 0 "
-       id="path16725" />
+       style="fill:none;stroke:#ffffff;stroke-width:1.06697798;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
+       d="M 0,0 H 958.7848 V 1440 H 0 Z m 0,0"
+       id="path16725"
+       inkscape:connector-curvature="0" />
     <g
        clip-path="url(#clip1)"
        id="g16729"
-       clip-rule="nonzero"
-       style="fill:#ffffff;fill-opacity:1">
+       style="clip-rule:nonzero;fill:#ffffff;fill-opacity:1;stroke-width:1.20587575"
+       transform="matrix(0.70022155,0,0,0.98210827,2.4638041,25.617043)">
       <path
-         style="stroke:none;fill-rule:nonzero;fill:#ffffff;fill-opacity:1"
-         d="M 8.21875 5.480469 L 1321.59375 5.480469 L 1321.59375 1431.78125 L 8.21875 1431.78125 Z M 8.21875 5.480469 "
-         id="path16727" />
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.44106925"
+         d="M 8.21875,5.480469 H 1321.5938 V 1431.7813 H 8.21875 Z m 0,0"
+         id="path16727"
+         inkscape:connector-curvature="0" />
     </g>
     <g
        clip-path="url(#clip2)"
-       clip-rule="nonzero"
-       id="g16733">
+       id="g16733"
+       transform="matrix(0.70993659,0,0,1,2.4613315,0)"
+       style="clip-rule:nonzero;stroke-width:1.18683469">
       <path
-         style="fill:none;stroke-width:1.066978;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;"
-         d="M 8.21875 5.480469 L 1321.59375 5.480469 L 1321.59375 1431.78125 L 8.21875 1431.78125 Z M 8.21875 5.480469 "
-         id="path16731" />
+         style="fill:none;stroke:#ffffff;stroke-width:1.26632643;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
+         d="M 8.21875,5.480469 H 1321.5938 V 1431.7813 H 8.21875 Z m 0,0"
+         id="path16731"
+         inkscape:connector-curvature="0" />
     </g>
     <path
        style="fill:none;stroke-width:2.133957;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(69.802856%,87.449646%,54.116821%);stroke-opacity:1;stroke-miterlimit:10;"
@@ -4849,5 +4846,16 @@
              style="stroke-width:1.14163041" /></flowRegion><flowPara
            id="flowPara37755"
            style="stroke-width:1.14163041">10</flowPara></flowRoot>    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="90.189957"
+       y="1425.4177"
+       id="text26119"><tspan
+         sodipodi:role="line"
+         id="tspan26117"
+         x="90.189957"
+         y="1425.4177"
+         style="stroke-width:0.75px">(Amino acid substitutions per site)</tspan></text>
   </g>
 </svg>
