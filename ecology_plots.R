@@ -39,8 +39,8 @@ tree <- read.tree("fileS1_msa_fixed_rooted.tree")
 #read data, clean up columns, attach to tree
 data <- read_xlsx("fileS4_microbe-data.xlsx")
 data <- data[, 1:5]
-colnames(data) <- c("organism", "group", "plant_path", "plant_associate", "ecology")
-data$plant_associate[which(data$plant_associate=="No" & data$plant_path=="Yes")] <- "Yes"
+colnames(data) <- c("organism", "group", "plant_path", "plant_associated", "ecology")
+data$plant_associated[which(data$plant_associated=="No" & data$plant_path=="Yes")] <- "Yes"
 p <- ggtree(tree)
 p <- p %<+% data
 
@@ -61,10 +61,11 @@ ecology_counts <- data %>%
 
 ecology_split <- split(ecology_counts, ecology_counts$group)
 
+#make ecology breakdown barplots
 ecology_plots <- lapply(ecology_split, function(x){
-  ggplot(x, aes(x = ecology, y = n)) + 
-    geom_bar(stat = "identity", fill=x$color) + 
-    expand_limits(y = max(x$n)*1.2) +
+  ggplot(x, aes(x = ecology, y = percent)) + 
+    geom_col(fill = x$color) + 
+    ylim(0, 105) +
     coord_flip() + 
     theme_minimal() +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.title = element_blank(), axis.text.x = element_blank()) +
@@ -74,19 +75,40 @@ ecology_plots <- lapply(ecology_split, function(x){
   }
 )  
 
+#make plant association barplots 
+plant_associated_counts <- data %>% 
+  truly_group_by(group, plant_associated) %>%
+  tally() %>%
+  group_by(group) %>% 
+  mutate(percent = round((n/sum(n))*100, digits = 1)) 
+
+plant_associated_split <- split(plant_associated_counts, plant_associated_counts$group)
+
+plant_associated_plots <- lapply(plant_associated_split, function(x){
+  ggplot(x, aes(x = group, y = percent, fill = plant_associated)) +
+    scale_fill_manual(values = c("white", "springgreen4")) +
+    geom_col(color = "black", size = 0.5) + 
+    theme_inset() +
+    labs(y = paste0(x$percent[2], "%"))
+  }
+)
+
+plant_associated_plots <- plant_associated_plots[-c(5, 10)]
+names(plant_associated_plots) <- c(426, 178, 225, 2, 163, 349, 317, 380, 259, 296)
+
 #group tips by taxonomy
 eco_split <- split(p$data$label, p$data$ecology)
-plant_associate_split <- split(p$data$label, p$data$plant_associate)
+plant_associated_split <- split(p$data$label, p$data$plant_associated)
 plant_path_split <- split(p$data$label, p$data$plant_path)
 eco_tree <- groupOTU(tree, eco_split, group_name = "ecology")
-eco_tree <- groupOTU(eco_tree, plant_associate_split, group_name = "plant_associate")
+eco_tree <- groupOTU(eco_tree, plant_associated_split, group_name = "plant_associated")
 eco_tree <- groupOTU(eco_tree, plant_path_split, group_name = "plant_path")
 
 #plot tree w/ legend
 ecology_tree <-
   ggtree(eco_tree, aes(color=ecology)) + 
   geom_point2(aes(subset = as.numeric(sub("/.*", "", label))>=70 & as.numeric(sub(".*/", "", label))>=95 & !isTip), color = "black", size = 0.8) +
-  geom_tippoint(aes(shape = plant_associate), size = 0.8, color = "seagreen3") +
+  geom_tippoint(aes(shape = plant_associated), size = 0.8, color = "seagreen3") +
   scale_shape_manual(values = c(32, 17)) +
   xlim(0, 8) +
   scale_color_manual(values = colors) +
@@ -108,11 +130,9 @@ ecology_tree <-
 ecology_tree2 <-
   ggtree(eco_tree, aes(color=ecology)) + 
   geom_point2(aes(subset = as.numeric(sub("/.*", "", label))>=70 & as.numeric(sub(".*/", "", label))>=95 & !isTip), color = "black") +
-  geom_tippoint(aes(shape = plant_associate), size = 0.8, color = "seagreen3") +
-  scale_shape_manual(values = c(32, 17)) +
-  xlim(0, 8) +
+  xlim(0, 6) +
   scale_color_manual(values = colors) +
-  theme_tree2() +
+  geom_treescale(width = 0.5, linesize = 3, fontsize = 5, y = 0, x = 0) +
   geom_strip(296, 315, label = "Xanthomonads", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
   geom_strip(317, 347, label = "Firmicutes", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
   geom_strip(349, 360, label = "Enterobacteria", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
@@ -126,6 +146,9 @@ ecology_tree2 <-
   geom_strip(225, 231, label = "Archaeplastida", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
   geom_strip(259, 291, label = "Stramenopiles", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1)
 
+#plot plant_association as inset
+ecology_tree_insets <- inset(ecology_tree2, plant_associated_plots, width = 0.2, height = 35, hjust = -1.2)
+
 #setup grid layout for multiplot
 lay <- rbind(
              c(1,1,1,1,2),
@@ -138,44 +161,14 @@ lay <- rbind(
              c(1,1,1,1,9),
              c(1,1,1,1,10),
              c(1,1,1,1,11),
-             c(1,1,1,1,12),
-             c(1,1,1,1,13)
+             c(1,1,1,1,12)
              )
 
 #reorder grobs for multiplot
-order <- c("tree", "Xanthomonads", "Firmicutes", "Enterobacteria", "Myxobacteria", "Actinobacteria", "Other", "Ascomycetes", "Basidiomycetes", "Amoebozoa", "Archaeplastids", "Stramenopiles")
+order <- c("tree", "Xanthomonads", "Firmicutes", "Enterobacteria", "Myxobacteria", "Actinobacteria", "Ascomycetes", "Basidiomycetes", "Amoebozoa", "Archaeplastids", "Stramenopiles")
 
 #plot grobs
 plots_list <- ecology_plots
-plots_list$tree <- ecology_tree2
+plots_list$tree <- ecology_tree_insets
 plots_list <- plots_list[order]
 grid.arrange(grobs = plots_list, layout_matrix = lay)
-
-
-
-##testing insets... not working##
-
-#simple version
-ecology_plots_simple <- lapply(ecology_split, function(x){
-  ggplot(x, aes(x = ecology, y = n)) + 
-    geom_bar(stat = "identity") + 
-    theme_inset()
-}
-)  
-
-#get nodes to place bar chart insets
-names(ecology_plots_simple) <- c(1025, 788, 837, 616, 1125, 774, 969, 916, 1001, 1117, 849, 921)
-test<-ggtree(tree)
-inset_tree <- inset(test, ecology_plots_simple, width = 100, height = 100, x = "branch")
-
-#troubleshooting insets
-tr <- rtree(15)
-v <- ggtree(tr)
-d <- lapply(1:15, rnorm, n=100)
-ylim <- range(unlist(d))
-bx <- lapply(d, function(y) {
-  dd <- data.frame(y=y)
-  ggplot(dd, aes(x=1, y=y))+geom_boxplot() + ylim(ylim) + theme_inset()
-})
-names(bx) <- 1:15
-inset(test, bx, width=1, height=1)
