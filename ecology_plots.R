@@ -65,7 +65,7 @@ ecology_split <- split(ecology_counts, ecology_counts$group)
 ecology_plots <- lapply(ecology_split, function(x){
   ggplot(x, aes(x = ecology, y = percent)) + 
     geom_col(fill = x$color) + 
-    ylim(0, 105) +
+    ylim(0, 115) +
     coord_flip() + 
     theme_minimal() +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.title = element_blank(), axis.text.x = element_blank()) +
@@ -147,7 +147,7 @@ ecology_tree2 <-
   geom_strip(259, 291, label = "Stramenopiles", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1)
 
 #plot plant_association as inset
-ecology_tree_insets <- inset(ecology_tree2, plant_associated_plots, width = 0.2, height = 35, hjust = -1.2)
+ecology_tree_insets <- inset(ecology_tree2, plant_associated_plots, width = 0.2, height = 30, hjust = -1.2)
 
 #setup grid layout for multiplot
 lay <- rbind(
