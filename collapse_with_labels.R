@@ -10,7 +10,7 @@ library(readxl)
 
 #read tree and find nodes to collapse, only monophyletic clades can be collapsed
 tree <- read.tree("fileS1_msa_fixed_rooted.tree")
-nodes_tree <- ggtree(tree) + geom_tiplab(size = 1) + geom_text2(aes(subset = !isTip, label = node), size = 1, hjust = -0.3)
+nodes_tree <- ggtree(tree) + geom_tiplab(size = 1) + geom_text2(aes(label = node), size = 1, hjust = -0.3)
 nodes_to_collapse <- c(923, 938, 943, 951, 983, 990, 1001, 1019, 1115, 1134, 615, 788, 836, 846, 774)
 labels = c("Xanthomonas spp", "Xanthomonas spp", "Paenibacillus spp", "Bacillus spp", "Bacillus spp", "Myxobacteria", "Myxobacteria", "Actinobacteria", "β-proteobacteria", "Actinobacteria", "Ascomycetes", "Amoebozoa", "Viridiplantae", "Stramenopiles", "Basidiomycetes")
 
@@ -58,13 +58,15 @@ colors2<-c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", "#fdbf6f", "#f
 #plot tree
 collapse_tree<-
   ggtree(taxonomy_tree, aes(color=taxonomy, size=HGT)) + 
+  geom_treescale(width = 0.5, linesize = 2, fontsize = 5, y = 0, x = 0) +
+  geom_point2(aes(subset = as.numeric(sub("/.*", "", label))>=70 & as.numeric(sub(".*/", "", label))>=95 & !isTip), color = "black") +
   geom_cladelabel(node = 903, label = "Prokaryotes", color = "black", barsize = 2, align = T, fontsize = 10, offset = 1) +
   geom_cladelabel(node = 610, label = "Eukaryotes", color = "black", barsize = 2, align = T, fontsize = 10, offset = 1) +
+  geom_strip(604, 608, label = "Mixed Prokaryotes/Eukaryotes", color = "black", barsize = 2, align = T, fontsize = 10, offset = 1) +
   xlim(0, 8) +
   scale_color_manual(values = colors1) +
-  theme(legend.position = "right") +
-  scale_size_manual(values=c(1, 3)) +
-  theme_tree2()
+  scale_size_manual(values=c(1, 3)) + 
+  geom_tiplab(color = "black", size = 2)
 
 #collapse nodes
 for(i in 1:length(nodes_to_collapse)){
