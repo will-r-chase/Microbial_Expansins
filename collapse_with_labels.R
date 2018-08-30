@@ -66,7 +66,7 @@ collapse_tree<-
   xlim(0, 8) +
   scale_color_manual(values = colors1) +
   scale_size_manual(values=c(1, 3)) + 
-  geom_tiplab(color = "black", size = 2)
+  geom_tiplab(color = "black", size = 3)
 
 #collapse nodes
 for(i in 1:length(nodes_to_collapse)){
