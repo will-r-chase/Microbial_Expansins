@@ -21,5 +21,24 @@ data <- data %>%
 
 colnames(data) <- c("organism", "group", "plant_path", "plant_associate", "ecology")
 
+bayes_data<-bayes %>% tidytree::as_data_frame()
 
+data2 <- data[which(data$organism%in%bayes_data$label),]		##remove any names in your data frame not found in tip labels (eg. node names)
+tr_tips <- data.frame(organism = as.character(bayes_data$label))  ##make data frame with tree tip labels
+data3 <- left_join(tr_tips, data2, by="organism")		##reorder your data frame to match order or tip labels
 
+tree_split <- split(bayes_data$label, data3$group)
+tax_group_tree <- groupOTU(bayes_data, tree_split, group_name = "taxonomy")
+
+tax_group_tree$upper_prob <- tax_group_tree$prob_range %>%
+  purrr::map(., 2, .null = NA) %>%
+  unlist() %>%
+  round(., digits = 2)
+
+tax_treedata <- as.treedata(tax_group_tree)
+
+ggtree(tax_treedata, aes(color = taxonomy)) + 
+  geom_tiplab(size = 1, color = "black") + 
+  geom_nodelab(aes(label = upper_prob), color = "black", size = 1.5, hjust = 0.1) +
+  geom_treescale(y = -30, width = 0.5) +
+  theme(legend.position = "right")

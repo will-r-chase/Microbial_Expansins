@@ -25,6 +25,26 @@ p <- p %<+% data
 taxonomy_tree <- split(p$data$label, p$data$group)
 taxonomy_tree <- groupOTU(tree, taxonomy_tree, group_name = "taxonomy")
 
+ggtree(taxonomy_tree, aes(color=taxonomy)) + 
+  geom_tiplab(color = "black", size = 0.8) +
+  geom_treescale(width = 0.5, linesize = 1, fontsize = 5, y = -30, x = 0) +
+  geom_point2(aes(subset = as.numeric(sub("/.*", "", label))>=70 & as.numeric(sub(".*/", "", label))>=95 & !isTip), color = "black", size = 1) +
+  geom_strip(296, 315, label = "Xanthomonads", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(317, 347, label = "Firmicutes", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(349, 360, label = "Enterobacteria", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(363, 374, label = "Firmicutes", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(380, 394, label = "Myxobacteria", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(426, 500, label = "Actinobacteria", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(527, 602, label = "Actinobacteria", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(2, 161, label = "Ascomycetes", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(163, 174, label = "Basidiomycetes", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(178, 207, label = "Amoebozoa", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(225, 231, label = "Archaeplastida", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  geom_strip(259, 291, label = "Stramenopiles", barsize = 2, color = "black", align = T, fontsize = 10, offset = 1) +
+  xlim(0, 8) +
+  scale_color_manual(values = colors1) +
+  theme(legend.position = "right")
+
 #group HGT species
 taxonomy_tree <- groupOTU(taxonomy_tree, 
                        .node=c("Ralstonia-syzygii", "Ralstonia-solanacearum", "Erwinia-tracheiphila", "Pantoea-stewartii", "Lonsdalea-quercina", "Pectobacterium-atrosepticum", "Pectobacterium-wasabiae", "Pectobacterium-parmentieri", "Pectobacterium-betavasculorum", "Pectobacterium-carotovorum", "Dickeya-zeae", "Dickeya-dadantii", "Dickeya-dianthicola", "Dickeya-chrysanthemi", "Dickeya-solani", "Cedecea-neteri", "Sphaerotilus-natas", "Janthinobacterium-sp", "Methylibium-sp", "Acidovorax-radicis", "Leptothrix-cholodnii", "Polyangium-brachysporum", "Vitrella-brassicaformis", "Sorangium-cellulosum", "Neocallimastix-californiae", "Anaeromyces-robustus", "Piromyces-finnis", "Allomyces-macrogynus", "Hamadaea-tsunoensis", "Streptomyces-acidiscabies", "Uliginosibacterium-gangwonense", "Haloferula-sp", "Physarum-polycephalum", "Acanthamoeba-castellanii", "Trichoderma-harzianum", "Trichoderma-virens", "Trichoderma-pseudokoningii", "Trichoderma-reesei", "Trichoderma-asperellum", "Trichoderma-atroviride", "Talaromyces-stipitatus2", "Penicillium-decumbens", "Penicillium-oxalicum", "Penicillium-brasilianum2", "Talaromyces-cellulolyticus3", "Talaromyces-marneffei", "Talaromyces-verruculosus2", "Thalassiosira-oceanica"),
@@ -58,7 +78,7 @@ colors2<-c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", "#fdbf6f", "#f
 #plot tree
 collapse_tree<-
   ggtree(taxonomy_tree, aes(color=taxonomy, size=HGT)) + 
-  geom_treescale(width = 0.5, linesize = 2, fontsize = 5, y = 0, x = 0) +
+  geom_treescale(width = 0.5, linesize = 1, fontsize = 5, y = -5, x = 0) +
   geom_point2(aes(subset = as.numeric(sub("/.*", "", label))>=70 & as.numeric(sub(".*/", "", label))>=95 & !isTip), color = "black") +
   geom_cladelabel(node = 903, label = "Prokaryotes", color = "black", barsize = 2, align = T, fontsize = 10, offset = 1) +
   geom_cladelabel(node = 610, label = "Eukaryotes", color = "black", barsize = 2, align = T, fontsize = 10, offset = 1) +
@@ -66,7 +86,7 @@ collapse_tree<-
   xlim(0, 8) +
   scale_color_manual(values = colors1) +
   scale_size_manual(values=c(1, 3)) + 
-  geom_tiplab(color = "black", size = 3)
+  geom_tiplab(color = "black", size = 4)
 
 #collapse nodes
 for(i in 1:length(nodes_to_collapse)){
