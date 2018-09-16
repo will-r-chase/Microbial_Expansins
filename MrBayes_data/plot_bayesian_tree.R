@@ -13,7 +13,7 @@ bayes
 nodes_tree <- ggtree(bayes) + geom_tiplab(size = 1) + geom_text2(aes(label = node), size = 1, hjust = -0.3)
 nodes_tree
 
-data <- read_xlsx("D:/R projects/Microbial_Expansins/fileS4_microbe-data.xlsx")
+data <- read_xlsx("D:/R projects/Microbial Expansins/Microbial_Expansins/fileS4_microbe-data.xlsx")
 data <- data %>%
   filter(Organism != "Vitrella-brassicaformis") %>%
   filter(Organism != "Emiliania-huxleyi") %>%
@@ -37,8 +37,12 @@ tax_group_tree$upper_prob <- tax_group_tree$prob_range %>%
 
 tax_treedata <- as.treedata(tax_group_tree)
 
+colors1<-c("#a6cee3", "#1f78b4", "#b15928", "#b2df8a", "#33a02c", "#fb9a99", "#e31a1c", "#fdbf6f", "#ff7f00", "#cab2d6", "#6a3d9a", "#cccc3d")
+colors2<-c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", "#fdbf6f", "#ff7f00", "#cab2d6", "#6a3d9a", "#FFFF4D", "#b15928")
+
 ggtree(tax_treedata, aes(color = taxonomy)) + 
   geom_tiplab(size = 1, color = "black") + 
-  geom_nodelab(aes(label = upper_prob), color = "black", size = 1.5, hjust = 0.1) +
+  geom_nodelab(aes(label = prob_percent), color = "black", size = 1.5, hjust = 0.1) +
   geom_treescale(y = -30, width = 0.5) +
-  theme(legend.position = "right")
+  theme(legend.position = "right") +
+  scale_color_manual(values = colors1)
