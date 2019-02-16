@@ -8,6 +8,8 @@ library(readxl)
 library(purrr)
 library(gridExtra)
 
+/Users/lorishapiro/Dropbox/AncientDNA/Expansin-endoglucanase-phylogeny/Microbial_Expansins
+
 ##function to fix zero-length groups in ecology plots
 truly_group_by <- function(data, ...){
   dots <- quos(...)
