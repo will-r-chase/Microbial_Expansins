@@ -25,6 +25,10 @@ p <- p %<+% data
 taxonomy_tree <- split(p$data$label, p$data$group)
 taxonomy_tree <- groupOTU(tree, taxonomy_tree, group_name = "taxonomy")
 
+#define colors for taxonomy coloring
+colors1<-c("#a6cee3", "#1f78b4", "#b15928", "#b2df8a", "#33a02c", "#fb9a99", "#e31a1c", "#fdbf6f", "#ff7f00", "#cab2d6", "#6a3d9a", "#cccc3d")
+colors2<-c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", "#fdbf6f", "#ff7f00", "#cab2d6", "#6a3d9a", "#FFFF4D", "#b15928")
+
 ggtree(taxonomy_tree, aes(color=taxonomy)) + 
   geom_tiplab(color = "black", size = 0.8) +
   geom_treescale(width = 0.5, linesize = 1, fontsize = 5, y = -30, x = 0) +
@@ -57,10 +61,6 @@ number_collapsed <- map_int(children, ~nrow(.))
 
 #make labels for collapsed clades
 tree_labels <- paste(labels, paste0("(", paste(number_collapsed, "taxa)", sep = " ")), sep = " ")
-
-#define colors for taxonomy coloring
-colors1<-c("#a6cee3", "#1f78b4", "#b15928", "#b2df8a", "#33a02c", "#fb9a99", "#e31a1c", "#fdbf6f", "#ff7f00", "#cab2d6", "#6a3d9a", "#cccc3d")
-colors2<-c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", "#fdbf6f", "#ff7f00", "#cab2d6", "#6a3d9a", "#FFFF4D", "#b15928")
 
 #plot tree
 collapse_tree<-
